@@ -2,8 +2,8 @@ import { useRef, useState } from 'react';
 import AboutMeComponent from '../../Dashboards/AboutMePage/AboutMePage';
 import ApresentationPage from '../../Dashboards/ApresentationPage/ApresentationPage';
 import PortifolioPage from '../../Dashboards/PortifolioPage/Portifolio';
+import SkillsPage from '../../Dashboards/SkillsPage/SkillsPage';
 
-import styled from 'styled-components';
 import HeaderComponent from '../../Header/HeaderComponent';
 
 function InitialScreen() {
@@ -32,7 +32,18 @@ function InitialScreen() {
 
 	return (
 		<>
-			{visibleHeader ? <HeaderComponent /> : ''}
+			{visibleHeader ? (
+				<HeaderComponent
+					topRef={topRef}
+					aboutRef={aboutRef}
+					experienceRef={experienceRef}
+					portifolioRef={portifolioRef}
+					skillsRef={skillsRef}
+					contactRef={contactRef}
+				/>
+			) : (
+				''
+			)}
 			<ApresentationPage
 				topRef={topRef}
 				aboutRef={aboutRef}
@@ -44,6 +55,8 @@ function InitialScreen() {
 			<AboutMeComponent aboutRef={aboutRef} />
 
 			<PortifolioPage portifolioRef={portifolioRef} />
+
+			<SkillsPage skillsRef={skillsRef} />
 		</>
 	);
 }
