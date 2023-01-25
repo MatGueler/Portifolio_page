@@ -1,7 +1,9 @@
+import ApresentationPage from '../../Dashboards/ApresentationPage/ApresentationPage';
+
 function InitialScreen() {
 	return (
 		<>
-			<h1>Ola</h1>
+			<ApresentationPage />
 		</>
 	);
 }
