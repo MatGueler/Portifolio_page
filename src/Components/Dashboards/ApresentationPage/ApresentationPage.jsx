@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { HiLocationMarker } from 'react-icons/hi';
 import { Container } from '../../Container/ContainerComponent';
@@ -7,16 +8,42 @@ import {
 	ImageProfile,
 	ProfileIcons,
 	Summary,
+	TextCursor,
 	TextProfile,
 } from '../ApresentationPage/ApresentationPage-style';
 
-export default function ApresentationPage({ topRef }) {
+export default function ApresentationPage({ topRef, aboutRef }) {
 	const ScrollSection = (elemetRef) => {
 		window.scrollTo({
 			top: elemetRef.current.offsetTop,
 			behavior: 'smooth',
 		});
 	};
+
+	function TypeWriter({ value }) {
+		const [text, setText] = useState('');
+
+		const typeWriter = (text, i = 0) => {
+			if (i < value.length) {
+				setText(text.slice(0, i + 1));
+				setTimeout(() => {
+					typeWriter(text, i + 1);
+				}, 100);
+			}
+		};
+
+		useEffect(() => {
+			typeWriter(value);
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+		}, []);
+
+		return (
+			<>
+				<h1>{text}</h1>
+				<TextCursor />
+			</>
+		);
+	}
 
 	return (
 		<Container theme='clean' ref={topRef}>
@@ -43,10 +70,8 @@ export default function ApresentationPage({ topRef }) {
 					</ProfileIcons>
 				</ImageProfile>
 				<TextProfile>
-					<h1>Mateus Gueler Machado</h1>
-					<h1>
-						{'<'} Desenvolvedor Web Full Stack {'/>'}
-					</h1>
+					<TypeWriter value='< Desenvolvedor Web Full Stack />' />
+					<TypeWriter value='Mateus Gueler Machado' />
 					<ProfileIcons>
 						<div className='icon'>
 							<HiLocationMarker />
@@ -57,9 +82,9 @@ export default function ApresentationPage({ topRef }) {
 			</Painel>
 
 			<Summary>
-				<button>Sobre mim</button>
+				<button onClick={() => ScrollSection(aboutRef)}>Sobre mim</button>
 
-				<button>Portifólio</button>
+				<button onClick={() => ScrollSection(aboutRef)}>Portifólio</button>
 
 				<button>Habilidades</button>
 

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const TextProfile = styled.div`
 	width: 70%;
@@ -56,6 +56,22 @@ export const Summary = styled.div`
 
 		cursor: pointer;
 	}
+`;
+
+export const blinkTextCursor = keyframes`
+  from {border-right-color: rgba(0, 0, 0, .75);}  to {border-right-color: transparent}`;
+
+export const TextCursor = styled.span`
+	border-right: 2px solid rgba(0, 0, 0, 0.75);
+	display: inline;
+
+	/* A mágica acontece aqui */
+	animation: ${blinkTextCursor} 0.7s steps(44) infinite normal;
+`;
+
+export const Container = styled.p`
+	display: inline-block;
+	margin: 0;
 `;
 
 export const ImageProfile = styled.div`
