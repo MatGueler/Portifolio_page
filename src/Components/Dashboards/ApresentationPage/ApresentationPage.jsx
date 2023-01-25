@@ -12,7 +12,7 @@ import {
 	TextProfile,
 } from '../ApresentationPage/ApresentationPage-style';
 
-export default function ApresentationPage({ topRef, aboutRef }) {
+export default function ApresentationPage({ topRef, aboutRef, portifolioRef }) {
 	const ScrollSection = (elemetRef) => {
 		window.scrollTo({
 			top: elemetRef.current.offsetTop,
@@ -33,7 +33,7 @@ export default function ApresentationPage({ topRef, aboutRef }) {
 		};
 
 		useEffect(() => {
-			typeWriter(value);
+			setInterval(() => typeWriter(value), 8000);
 			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, []);
 
@@ -84,7 +84,7 @@ export default function ApresentationPage({ topRef, aboutRef }) {
 			<Summary>
 				<button onClick={() => ScrollSection(aboutRef)}>Sobre mim</button>
 
-				<button onClick={() => ScrollSection(aboutRef)}>Portifólio</button>
+				<button onClick={() => ScrollSection(portifolioRef)}>Portifólio</button>
 
 				<button>Habilidades</button>
 
