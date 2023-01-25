@@ -2,13 +2,22 @@ import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import { HiLocationMarker } from 'react-icons/hi';
 import { Container } from '../../Container/ContainerComponent';
 import { Painel } from '../../Pages/InitialScreen/InitialScreenStyle';
+
 import {
 	ImageProfile,
 	ProfileIcons,
+	Summary,
 	TextProfile,
 } from '../ApresentationPage/ApresentationPage-style';
 
 export default function ApresentationPage({ topRef }) {
+	const ScrollSection = (elemetRef) => {
+		window.scrollTo({
+			top: elemetRef.current.offsetTop,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<Container theme='clean' ref={topRef}>
 			<Painel height='50%' theme='dark'>
@@ -46,6 +55,18 @@ export default function ApresentationPage({ topRef }) {
 					</ProfileIcons>
 				</TextProfile>
 			</Painel>
+
+			<Summary>
+				<button>Sobre mim</button>
+
+				<button>Portifólio</button>
+
+				<button>Habilidades</button>
+
+				<button>Formação</button>
+
+				<button>Contato</button>
+			</Summary>
 		</Container>
 	);
 }
