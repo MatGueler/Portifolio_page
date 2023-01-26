@@ -28,9 +28,6 @@ import node from '../../../Assets/Image/node.svg';
 
 export default function SkillsPage({ skillsRef }) {
 	const [current, setCurrent] = useState(1);
-	const [openProject, setOpenProject] = useState(false);
-	const [headerVisible, setHeaderVisible] = useState(false);
-	const [selectedProject, setSelectedProject] = useState({});
 
 	const carousel = useRef(null);
 
