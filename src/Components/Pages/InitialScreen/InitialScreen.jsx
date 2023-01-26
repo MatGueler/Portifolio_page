@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import AboutMeComponent from '../../Dashboards/AboutMePage/AboutMePage';
 import ApresentationPage from '../../Dashboards/ApresentationPage/ApresentationPage';
+import ExperienceComponent from '../../Dashboards/ExperiencePage/ExperiencePage';
 import PortifolioPage from '../../Dashboards/PortifolioPage/Portifolio';
 import SkillsPage from '../../Dashboards/SkillsPage/SkillsPage';
 
@@ -57,6 +58,8 @@ function InitialScreen() {
 			<PortifolioPage portifolioRef={portifolioRef} />
 
 			<SkillsPage skillsRef={skillsRef} />
+
+			<ExperienceComponent experienceRef={experienceRef} />
 		</>
 	);
 }
