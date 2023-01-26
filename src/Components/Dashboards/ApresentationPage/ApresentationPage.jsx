@@ -18,6 +18,7 @@ export default function ApresentationPage({
 	portifolioRef,
 	skillsRef,
 	experienceRef,
+	contactRef,
 }) {
 	const ScrollSection = (elemetRef) => {
 		window.scrollTo({
@@ -97,7 +98,7 @@ export default function ApresentationPage({
 
 				<button onClick={() => ScrollSection(experienceRef)}>Formação</button>
 
-				<button>Contato</button>
+				<button onClick={() => ScrollSection(contactRef)}>Contato</button>
 			</Summary>
 		</Container>
 	);
