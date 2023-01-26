@@ -35,6 +35,19 @@ export const ContactBox = styled.div`
 		outline: none;
 	}
 
+	p {
+		width: 100%;
+		border: solid 4px transparent;
+		border-left-color: #ff0000;
+		font-size: 15px;
+		font-weight: bold;
+
+		padding-left: 10px;
+		color: #ff0000;
+
+		box-sizing: border-box;
+	}
+
 	form {
 		width: 100%;
 		height: 100%;
@@ -54,39 +67,49 @@ export const ContactBox = styled.div`
 		align-items: center;
 
 		padding: 0 10px;
+
+		input {
+			width: 100%;
+			height: 50px;
+
+			border-radius: 5px;
+			border: 0;
+
+			padding: 0 10px;
+			margin-bottom: 20px;
+
+			box-sizing: border-box;
+		}
+
+		button {
+			width: 50%;
+			height: 40px;
+
+			border-radius: 10px;
+			border: 0;
+
+			cursor: pointer;
+		}
 	}
+	.message-box {
+		width: 50%;
 
-	input {
-		width: 100%;
-		height: 50px;
-
-		border-radius: 5px;
-		border: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
 		padding: 0 10px;
-		margin-bottom: 20px;
 
-		box-sizing: border-box;
-	}
+		textarea {
+			width: 100%;
+			height: 100%;
 
-	button {
-		width: 50%;
-		height: 40px;
+			padding: 10px;
 
-		border-radius: 10px;
-		border: 0;
+			border-radius: 10px;
+			border: 0;
 
-		cursor: pointer;
-	}
-
-	textarea {
-		width: 50%;
-
-		padding: 10px;
-
-		border-radius: 10px;
-		border: 0;
-
-		box-sizing: border-box;
+			box-sizing: border-box;
+		}
 	}
 `;
