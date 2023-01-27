@@ -7,49 +7,71 @@ import {
 	Title,
 } from './PortifolioPage-style';
 
+// images
+import supermercash from '../../../Assets/Image/supermercash.png';
+import mywallet from '../../../Assets/Image/mywallet.png';
+import ngcash from '../../../Assets/Image/ngcash.png';
+import drivenplus from '../../../Assets/Image/drivenplus.png';
+import weatherapp from '../../../Assets/Image/weatherapp.png';
+import zaprecall from '../../../Assets/Image/zaprecall.png';
+import trackit from '../../../Assets/Image/trackit.png';
+
 import { AiOutlineZoomIn } from 'react-icons/ai';
 import { IoCloseOutline } from 'react-icons/io5';
 
 export const projects = [
 	{
 		title: 'Supermercash',
-		image:
-			'https://camo.githubusercontent.com/aba303aa0c77046ffb1c496351deb365eef33e792008a4e6c4b16058eb491287/68747470733a2f2f75706c6f61646465696d6167656e732e636f6d2e62722f696d616765732f3030342f3035362f3135342f66756c6c2f4c6f676f2e706e673f31363635343138383832',
+		image: supermercash,
+		backgroundImage: supermercash,
 		linkGithub: 'https://github.com/MatGueler/supermercash-front',
 		linkDeploy: 'title',
 		description: '',
-		// video: backgroundVideo,
 	},
 	{
 		title: 'My Wallet',
-		image:
-			'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
+		image: mywallet,
+		backgroundImage: mywallet,
 		linkGithub: 'https://github.com/MatGueler/projeto13-mywallet-front',
+		linkDeploy: 'title',
+	},
+	{
+		title: 'NG cash',
+		image: ngcash,
+		backgroundImage: ngcash,
+		linkGithub: 'https://github.com/MatGueler/projeto13-mywallet-front',
+		linkDeploy: 'title',
+	},
+	{
+		title: 'Trackit',
+		image: trackit,
+		backgroundImage: trackit,
+		linkGithub: 'title',
+		linkDeploy: 'title',
+	},
+	{
+		title: 'Zap recall',
+		image: zaprecall,
+		backgroundImage: zaprecall,
+		linkGithub: 'title',
+		linkDeploy: 'title',
+	},
+	{
+		title: 'Driven plus',
+		image: drivenplus,
+		backgroundImage: drivenplus,
+		linkGithub: 'title',
+		linkDeploy: 'title',
+	},
+	{
+		title: 'Weather app',
+		image: weatherapp,
+		backgroundImage: weatherapp,
+		linkGithub: 'title',
 		linkDeploy: 'title',
 	},
 	// {
 	// 	title: 'Linkr',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Trackit',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Zap recall',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Driven plus',
 	// 	image:
 	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
 	// 	linkGithub: 'title',
@@ -130,7 +152,7 @@ export default function PortifolioPage({ portifolioRef }) {
 				{openProject ? (
 					<OpenProject
 						id='back-modal'
-						image={selectedProject.image}
+						image={selectedProject.backgroundImage}
 						onClick={handleModal}>
 						<div className='project-box background'>
 							<div className='close' onClick={() => setOpenProject(false)}>
