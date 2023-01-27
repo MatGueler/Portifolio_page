@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import { Container } from '../../Container/ContainerComponent';
-import { Portifolio, Project, Title } from './PortifolioPage-style';
+import {
+	OpenProject,
+	Portifolio,
+	Project,
+	Title,
+} from './PortifolioPage-style';
 
 import { AiOutlineZoomIn } from 'react-icons/ai';
+import { IoCloseOutline } from 'react-icons/io5';
 
 export const projects = [
 	{
@@ -87,16 +93,18 @@ export const projects = [
 ];
 
 export default function PortifolioPage({ portifolioRef }) {
+	const [openProject, setOpenProject] = useState(false);
+	const [selectedProject, setSelectedProject] = useState({});
 	function PutProjects({ data }) {
 		const [isOverProject, setIsOverProject] = useState(false);
 		return (
 			<Project
-				// onClick={() => {
-				// 	setSelectedProject(data);
-				// 	setOpenProject(true);
-				// }}
-				// onMouseOver={() => setIsOverProject(true)}
-				// onMouseLeave={() => setIsOverProject(false)}
+				onClick={() => {
+					setSelectedProject(data);
+					setOpenProject(true);
+				}}
+				onMouseEnter={() => setIsOverProject(true)}
+				onMouseLeave={() => setIsOverProject(false)}
 				image={data.image}>
 				<h1>{data.title}</h1>
 				<div className='project-box'>
@@ -106,19 +114,47 @@ export default function PortifolioPage({ portifolioRef }) {
 		);
 	}
 
+	const handleModal = (e) => {
+		if (e.target.id === 'back-modal') {
+			setOpenProject(false);
+		}
+	};
+
 	return (
 		<>
-			<Container
-				id='3'
-				theme='clean'
-				ref={portifolioRef}
-				// onClick={() => {
-				// 	if (openProject) setOpenProject(false);
-				// }}
-			>
+			<Container id='3' theme='clean' ref={portifolioRef}>
 				<Title>
 					<h1>Meus projetos</h1>
 				</Title>
+
+				{openProject ? (
+					<OpenProject
+						id='back-modal'
+						image={selectedProject.image}
+						onClick={handleModal}>
+						<div className='project-box background'>
+							<div className='close' onClick={() => setOpenProject(false)}>
+								<IoCloseOutline />
+							</div>
+							<div className='description'>
+								<h1>{selectedProject.title}</h1>
+								<p>{selectedProject.description}</p>
+
+								<div className='action-buttons'>
+									<button>
+										<a
+											href={selectedProject.linkGithub}
+											target='_blank'
+											rel='noreferrer'>
+											Github
+										</a>
+									</button>
+									<button>Site</button>
+								</div>
+							</div>
+						</div>
+					</OpenProject>
+				) : null}
 
 				<Portifolio>
 					{projects.map((item, index) => (
