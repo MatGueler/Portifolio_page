@@ -1,10 +1,10 @@
-import { ContactContainer } from '../../Container/ContainerComponent';
+import { ExperienceContainer } from '../../Container/ContainerComponent';
 import { Title } from '../../Pages/InitialScreen/InitialScreenStyle';
 import { Timeline } from './ExperiencePage-style';
 
 export default function ExperienceComponent({ experienceRef }) {
 	return (
-		<ContactContainer
+		<ExperienceContainer
 			id='5'
 			ref={experienceRef}
 			style={{
@@ -66,6 +66,6 @@ export default function ExperienceComponent({ experienceRef }) {
 					</div>
 				</div>
 			</Timeline>
-		</ContactContainer>
+		</ExperienceContainer>
 	);
 }

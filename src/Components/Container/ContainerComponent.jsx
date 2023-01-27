@@ -19,6 +19,24 @@ export const Container = styled.div`
 	box-sizing: border-box;
 `;
 
+export const ExperienceContainer = styled.div`
+	width: 100%;
+	min-height: 100vh;
+
+	position: relative;
+
+	box-sizing: border-box;
+
+	background-color: ${(props) => {
+		if (props.theme === 'dark') {
+			return '#002453';
+		}
+		if (props.theme === 'clean') {
+			return 'transparent';
+		}
+	}};
+`;
+
 export const ContactContainer = styled.div`
 	width: 100%;
 	height: 100vh;
