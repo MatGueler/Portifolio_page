@@ -3,6 +3,7 @@ import { ContactContainer } from '../../Container/ContainerComponent';
 import { ContactBox, TextContact } from './ContactPage-style';
 
 import emailjs from '@emailjs/browser';
+import Alert from '../../Alert/SucessAlert';
 
 export default function ContactPage({ contactRef }) {
 	const [name, setName] = useState('');
@@ -16,6 +17,11 @@ export default function ContactPage({ contactRef }) {
 
 	const [message, setMessage] = useState('');
 	const [messageError, setMessageError] = useState(false);
+
+	const [sucessAlert, setSucessAlert] = useState(false);
+	const [badAlert, setBadAlert] = useState(false);
+
+	const [disable, setDisable] = useState(false);
 
 	const form = useRef();
 
@@ -39,7 +45,7 @@ export default function ContactPage({ contactRef }) {
 		} else {
 			setSubjectError(false);
 		}
-		if (message.length < 20) {
+		if (message.length < 10) {
 			valid = false;
 			setMessageError(true);
 		} else {
@@ -51,6 +57,8 @@ export default function ContactPage({ contactRef }) {
 
 	const sendEmail = (e) => {
 		e.preventDefault();
+		setDisable(true);
+
 		const isValid = validateInfos();
 		if (isValid) {
 			emailjs
@@ -60,18 +68,29 @@ export default function ContactPage({ contactRef }) {
 					form.current,
 					process.env.REACT_APP_USER_ID
 				)
-				.then(
-					(result) => {
-						console.log(result.text);
-					},
-					(error) => {
-						console.log(error.text);
-					}
-				);
+				.then((res) => {
+					setTimeout(() => {
+						setBadAlert(false);
+						setSucessAlert(false);
+						setDisable(false);
+					}, 2000);
+					setSucessAlert(true);
+				})
+				.catch((err) => {
+					setBadAlert(true);
+					console.log(err);
+				});
 			setName('');
 			setEmail('');
 			setSubject('');
 			setMessage('');
+		} else {
+			setTimeout(() => {
+				setBadAlert(false);
+				setSucessAlert(false);
+				setDisable(false);
+			}, 2000);
+			setBadAlert(true);
 		}
 	};
 
@@ -95,6 +114,8 @@ export default function ContactPage({ contactRef }) {
 			<TextContact>
 				<h3>Ficou alguma dúvida? Mande uma mensagem!</h3>
 				<h3>😁</h3>
+				{sucessAlert ? <Alert type='sucess' /> : null}
+				{badAlert ? <Alert type='bad' /> : null}
 			</TextContact>
 			<ContactBox>
 				<form ref={form} onSubmit={sendEmail}>
@@ -126,7 +147,7 @@ export default function ContactPage({ contactRef }) {
 							value={subject}
 						/>
 
-						<button>Enviar</button>
+						<button disabled={disable}>Enviar</button>
 					</div>
 					<div className='message-box'>
 						{messageError ? <ShowError type='message' /> : null}
