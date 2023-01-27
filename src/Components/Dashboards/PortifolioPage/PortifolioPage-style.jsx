@@ -19,7 +19,6 @@ export const Title = styled.div`
 `;
 
 export const Portifolio = styled.div`
-	width: 100%;
 	height: 80%;
 
 	display: flex;
@@ -30,13 +29,11 @@ export const Portifolio = styled.div`
 	padding: 20px;
 
 	box-sizing: border-box;
-
-	position: relative;
 `;
 
 export const Project = styled.div`
-	width: 180px;
-	height: 120px;
+	width: 250px;
+	height: 190px;
 
 	margin: 0 5px 5px 10px;
 	padding: 10px;
