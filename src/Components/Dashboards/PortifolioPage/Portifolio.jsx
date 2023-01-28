@@ -12,7 +12,6 @@ import supermercash from '../../../Assets/Image/supermercash.png';
 import mywallet from '../../../Assets/Image/mywallet.png';
 import ngcash from '../../../Assets/Image/ngcash.png';
 import drivenplus from '../../../Assets/Image/drivenplus.png';
-import weatherapp from '../../../Assets/Image/weatherapp.png';
 import zaprecall from '../../../Assets/Image/zaprecall.png';
 import trackit from '../../../Assets/Image/trackit.png';
 
@@ -25,93 +24,52 @@ export const projects = [
 		image: supermercash,
 		backgroundImage: supermercash,
 		linkGithub: 'https://github.com/MatGueler/supermercash-front',
-		linkDeploy: 'title',
-		description: '',
+		linkDeploy: 'http://supermercash-front.vercel.app/',
+		description:
+			'O aplicativo propõe que o usuário monte sua lista de compras com os itens desejados, em seguida serão apresentados os preços de sua compra em cada um dos mercados, disponibilizados em ordem, para que o usuário possa facilmente escolher o melhor custo-benefício.',
 	},
 	{
 		title: 'My Wallet',
 		image: mywallet,
 		backgroundImage: mywallet,
 		linkGithub: 'https://github.com/MatGueler/projeto13-mywallet-front',
-		linkDeploy: 'title',
+		linkDeploy: null,
+		description:
+			'O mywallet é um aplicativo focado na organização financeira, onde o usuário indica os valores recebidos e pagos durante o período. O intuito desse aplicativo é facilitar o monitoramento da saúde financeira do usuário.',
 	},
 	{
 		title: 'NG cash',
 		image: ngcash,
 		backgroundImage: ngcash,
-		linkGithub: 'https://github.com/MatGueler/projeto13-mywallet-front',
-		linkDeploy: 'title',
+		linkGithub: 'https://github.com/MatGueler/NG.CASH-project',
+		linkDeploy: null,
+		description:
+			'Esse projeto foi desenvolvido para simular transações entre usuarios da plataforma ng.cash, de forma simples e rápida.',
 	},
 	{
 		title: 'Trackit',
 		image: trackit,
 		backgroundImage: trackit,
-		linkGithub: 'title',
-		linkDeploy: 'title',
+		linkGithub: 'https://github.com/MatGueler/projeto10-trackit',
+		linkDeploy: null,
+		description: '',
 	},
 	{
 		title: 'Zap recall',
 		image: zaprecall,
 		backgroundImage: zaprecall,
-		linkGithub: 'title',
-		linkDeploy: 'title',
+		linkGithub: 'https://github.com/MatGueler/projeto8-zaprecall',
+		linkDeploy: null,
+		description: '',
 	},
 	{
 		title: 'Driven plus',
 		image: drivenplus,
 		backgroundImage: drivenplus,
-		linkGithub: 'title',
-		linkDeploy: 'title',
+		linkGithub: 'https://github.com/MatGueler/DrivenPlus',
+		linkDeploy: null,
+		description: '',
 	},
-	{
-		title: 'Weather app',
-		image: weatherapp,
-		backgroundImage: weatherapp,
-		linkGithub: 'title',
-		linkDeploy: 'title',
-	},
-	// {
-	// 	title: 'Linkr',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Twittero',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Bate papo',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Buzz quizz',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Driven eats',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
-	// {
-	// 	title: 'Parrots',
-	// 	image:
-	// 		'https://gestaocont.com.br/site/uploads/2020/06/ecommerce-seo-tips.jpg',
-	// 	linkGithub: 'title',
-	// 	linkDeploy: 'title',
-	// },
 ];
 
 export default function PortifolioPage({ portifolioRef }) {
@@ -163,15 +121,21 @@ export default function PortifolioPage({ portifolioRef }) {
 								<p>{selectedProject.description}</p>
 
 								<div className='action-buttons'>
-									<button>
+									<a
+										href={selectedProject.linkGithub}
+										target='_blank'
+										rel='noreferrer'>
+										<button>Github</button>
+									</a>
+
+									{selectedProject.linkDeploy ? (
 										<a
-											href={selectedProject.linkGithub}
+											href={selectedProject.linkDeploy}
 											target='_blank'
 											rel='noreferrer'>
-											Github
+											<button>Site</button>
 										</a>
-									</button>
-									<button>Site</button>
+									) : null}
 								</div>
 							</div>
 						</div>
