@@ -15,6 +15,7 @@ import drivenplus from '../../../Assets/Image/drivenplus.png';
 import zaprecall from '../../../Assets/Image/zaprecall.png';
 import trackit from '../../../Assets/Image/trackit.png';
 import shortly from '../../../Assets/Image/shortly.png';
+import weather from '../../../Assets/Image/weather.png';
 
 import { AiOutlineZoomIn } from 'react-icons/ai';
 import { IoCloseOutline } from 'react-icons/io5';
@@ -82,6 +83,15 @@ export const projects = [
 		linkDeploy: null,
 		description:
 			'O Shortly é um projeto para o usuário criar links curtos para compartilhar com mais facilidade com os amigos, evitando aquele link enorme que ocupa várias linhas na hora de enviar para os amigos. O usuário pode criar um link encurtado e gerenciar a quantidade de acessos que aquele link obteve.',
+	},
+	{
+		title: 'Weather App',
+		image: weather,
+		backgroundImage: weather,
+		linkGithub: 'https://github.com/MatGueler/Weather-app',
+		linkDeploy: 'https://weather-app-cyan-ten.vercel.app/',
+		description:
+			'Aplicativo que utiliza uma API externa OpenWeather para obter informações do clima para cada cidade pesquisada pelo usuário.',
 	},
 ];
 
