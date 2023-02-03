@@ -14,6 +14,7 @@ import ngcash from '../../../Assets/Image/ngcash.png';
 import drivenplus from '../../../Assets/Image/drivenplus.png';
 import zaprecall from '../../../Assets/Image/zaprecall.png';
 import trackit from '../../../Assets/Image/trackit.png';
+import shortly from '../../../Assets/Image/shortly.png';
 
 import { AiOutlineZoomIn } from 'react-icons/ai';
 import { IoCloseOutline } from 'react-icons/io5';
@@ -52,15 +53,17 @@ export const projects = [
 		backgroundImage: trackit,
 		linkGithub: 'https://github.com/MatGueler/projeto10-trackit',
 		linkDeploy: null,
-		description: '',
+		description:
+			'O TrackIt é um projeto para o usuário controlar os seus hpabitos diários. O usuário pode criar ou apagar um hábito, informando os dias específicos para realiza-lo, além disso consegue marcar os hábitos já realizados e hábitos que ainda faltam.',
 	},
 	{
 		title: 'Zap recall',
 		image: zaprecall,
 		backgroundImage: zaprecall,
 		linkGithub: 'https://github.com/MatGueler/projeto8-zaprecall',
-		linkDeploy: null,
-		description: '',
+		linkDeploy: 'https://projeto8-zaprecall-seven.vercel.app/',
+		description:
+			'O projeto ZapRecall é um jogo de pergunta, onde o usuário pode treinar suas habilidades com tecnologia. Ao responder todas as perguntas, o usuário recebe um feedback sobre seu desempenho, informando se concluiu o desafio ou se precisa melhorar.',
 	},
 	{
 		title: 'Driven plus',
@@ -68,7 +71,17 @@ export const projects = [
 		backgroundImage: drivenplus,
 		linkGithub: 'https://github.com/MatGueler/DrivenPlus',
 		linkDeploy: null,
-		description: '',
+		description:
+			'O projeto Driven Plus é uma plataforma de compra de serviços online. Essa aplicação permite que um usuário cadastrdo consiga comprar um determinado tipo de produto, também permite que o usuário atualize sua compra e troque de serviço.',
+	},
+	{
+		title: 'Shortly',
+		image: shortly,
+		backgroundImage: shortly,
+		linkGithub: 'https://github.com/MatGueler/Projeto16-shortly-front-',
+		linkDeploy: null,
+		description:
+			'O Shortly é um projeto para o usuário criar links curtos para compartilhar com mais facilidade com os amigos, evitando aquele link enorme que ocupa várias linhas na hora de enviar para os amigos. O usuário pode criar um link encurtado e gerenciar a quantidade de acessos que aquele link obteve.',
 	},
 ];
 
