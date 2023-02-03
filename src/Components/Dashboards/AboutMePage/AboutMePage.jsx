@@ -36,7 +36,7 @@ export default function AboutMeComponent({ aboutRef }) {
 		if (aboutInfosSelected === 'Curiosidades') {
 			return (
 				<ul>
-					<li>Tenho 4 cachorros, e sou apaionado por animais 🥰</li>
+					<li>Tenho 4 cachorros, e sou apaixonado por animais 🥰</li>
 					<li>Como bom brasileiro, adoro praia e verão 🏖️</li>
 					<li>
 						Sou muito curioso, adoro viajar e conhecer lugares/culturas novas;
@@ -72,7 +72,7 @@ export default function AboutMeComponent({ aboutRef }) {
 			</Title>
 			<Painel height='70%' theme='clean'>
 				<HeaderAbout>
-					{['Perfil', 'Curiosidades', 'Dedicatória'].map((item, index) => (
+					{['Perfil', 'Curiosidades'].map((item, index) => (
 						<RenderAboutHeader key={index} item={item} />
 					))}
 				</HeaderAbout>
