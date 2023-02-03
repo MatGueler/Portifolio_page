@@ -127,13 +127,13 @@ export const OpenProject = styled.div`
 
 	.description {
 		width: 90%;
-		height: 150px;
+		height: 200px;
 
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 
-		padding: 10px;
+		padding: 20px;
 
 		position: absolute;
 		bottom: 20px;
@@ -149,9 +149,13 @@ export const OpenProject = styled.div`
 	.description p {
 		width: 100%;
 
+		line-height: 15px;
+
 		font-size: 12px;
 
 		padding: 10px;
+
+		box-sizing: border-box;
 
 		text-align: justify;
 	}
@@ -163,6 +167,8 @@ export const OpenProject = styled.div`
 		padding: 10px;
 
 		text-align: justify;
+
+		box-sizing: border-box;
 	}
 
 	.action-buttons {
@@ -171,6 +177,8 @@ export const OpenProject = styled.div`
 	}
 
 	a {
+		width: 30%;
+		margin: 0 10px;
 		text-decoration: none;
 		color: #ffffff;
 	}
@@ -184,7 +192,7 @@ export const OpenProject = styled.div`
 	}
 
 	button {
-		width: 30%;
+		width: 100%;
 		height: 30px;
 		margin: 0 10px;
 
