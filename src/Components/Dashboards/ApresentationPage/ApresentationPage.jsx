@@ -4,6 +4,8 @@ import { HiLocationMarker } from 'react-icons/hi';
 import { Container } from '../../Container/ContainerComponent';
 import { Painel } from '../../Pages/InitialScreen/InitialScreenStyle';
 
+import profileImage from '../../../Assets/Image/imageProfile.jpg';
+
 import {
 	ImageProfile,
 	ProfileIcons,
@@ -57,11 +59,7 @@ export default function ApresentationPage({
 		<Container theme='clean' ref={topRef}>
 			<Painel height='50%' theme='dark'>
 				<ImageProfile>
-					<img
-						src='https://media-exp1.licdn.com/dms/image/C5603AQES3HRO7mPlpQ/profile-displayphoto-shrink_800_800/0/1668010094226?e=1675900800&v=beta&t=6s7tsa5LsppXosQTWMiH7pbsadFsHo04diSkdpm-K78'
-						alt='ImageProfle'
-						draggable={false}
-					/>
+					<img src={profileImage} alt='ImageProfle' draggable={false} />
 					<ProfileIcons>
 						<a
 							href='https://www.linkedin.com/in/mateusgueler/'
